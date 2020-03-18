@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/newsListingFragment">
+
+    <fragment
+        android:id="@+id/newsListingFragment"
+        android:name="digital.lamp.dagger_test.ui.list.NewsListingFragment"
+        android:label="news_list_layout"
+        tools:layout="@layout/news_list_layout"
+        app:defaultNavHost="true"
+        >
+        <action
+            android:id="@+id/action_newsListingFragment_to_newsDetailsFragment2"
+            app:destination="@id/newsDetailsFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailsFragment"
+        android:name="digital.lamp.dagger_test.ui.details.NewsDetailsFragment"
+        android:label="news_details_layout"
+        tools:layout="@layout/news_details_layout" >
+        <argument
+            android:name="data"
+            app:argType="digital.lamp.dagger_test.data.NewsItem"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_newsDetailsFragment_to_newsDetailOneFragment"
+            app:destination="@id/newsDetailOneFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:launchSingleTop="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailOneFragment"
+        android:name="digital.lamp.dagger_test.ui.detail_one.NewsDetailOneFragment"
+        android:label="fragment_news_detail_one"
+        tools:layout="@layout/fragment_news_detail_one" >
+        <argument
+            android:name="newsItem"
+            app:argType="digital.lamp.dagger_test.data.NewsItem"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>

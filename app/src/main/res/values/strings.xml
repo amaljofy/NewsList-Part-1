@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">News List Part-1</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="go_back">Go Back</string>
+    <string name="pressbtn">pressBtn</string>
+</resources>
